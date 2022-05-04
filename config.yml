@@ -1,0 +1,98 @@
+baseURL: "https://blog.momentum-mod.org/"
+languageCode: 'en-us'
+title: 'Momentum Mod Dev Blog'
+theme: PaperMod
+paginate: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Momentum Mod Blog
+  description: "Momentum Mod development blog, hosting official changelogs, announcements, and more!"
+  keywords: [Blog, Momentum Mod, Momentum, Mod, Developer Blog, devblog, changelogs, progress updates, news, announcements]
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: dark # dark, light
+  disableThemeToggle: false
+
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "/favicon.png"
+    favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
+
+  label:
+    text: "Momentum Mod Blog"
+    icon: /1000_nobg.png
+    iconHeight: 40
+
+  SocialIconsFooter: true
+  SocialIconsFooterHome: true
+  socialIcons:
+    - name: Discord
+      url: https://discord.gg/momentummod
+    - name: twitter
+      url: "https://twitter.com/momentummod"
+    - name: YouTube
+      url: "https://www.youtube.com/c/MomentumMod"
+    - name: github
+      url: "https://github.com/momentum-mod"
+
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+outputs:
+    home:
+      - HTML
+      - RSS
+      - JSON # is necessary
+
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 10
+    - identifier: archive
+      name: Archive
+      url: /archive/
+      weight: 20
+    - identifier: main-site
+      name: Main Site
+      url: https://momentum-mod.org
+      weight: 30
