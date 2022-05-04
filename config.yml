@@ -18,7 +18,7 @@ params:
   title: Momentum Mod Blog
   description: "Momentum Mod development blog, hosting official changelogs, announcements, and more!"
   keywords: [Blog, Momentum Mod, Momentum, Mod, Developer Blog, devblog, changelogs, progress updates, news, announcements]
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: ["/1000_nobg.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: dark # dark, light
   disableThemeToggle: false
