@@ -1,0 +1,34 @@
+---
+markup: html
+date: '2016-10-17T00:20:31+00:00'
+draft: false
+categories:
+ - photo
+tags: 
+ - Momentum
+ - SourceEngine
+ - GameDev
+ - MomentumMod
+ - PreAlpha
+title: '0.6.0-prealpha released!'
+showDate: yes
+url: /post/151907808249/060-prealpha-released
+---
+
+<p>Well, it&rsquo;s been awhile since our last update, but that doesn&rsquo;t mean we haven&rsquo;t been hard at work! For many of us on the Momentum development team, update 0.6.0 feels like far more than an incremental update; it contains <b>334 </b>commits to the master branch, and <b>14 </b>different feature branches were merged to the development branch. Much of this update includes behind the scenes refactoring of our codebase or small fixes suggested by players.</p><p><b></b></p><p>In the last few months we decided to hide the download link on the website, but not remove the public releases on our GitHub page. This was our (slightly passive-aggressive) solution to the problem of receiving a multitude of contact emails from people who seemingly didn&rsquo;t understand that they are playing a <b>very, VERY early</b> version of Momentum.</p><p>We realize now that the fraction of people contacting us is likely extremely tiny compared to the amount of people who were silently playing the mod. So, we&rsquo;ve restored the download link on the website, and the first thing you&rsquo;ll probably notice when running 0.6.0 is a small message box alerting you that you are playing the pre-alpha build of momentum. Hopefully, this helps to better inform the player base just how much more work is to be done before we are ready to let everyone officially play the game. Apologies all around for this debacle.</p><!-- more --><hr><p>The largest feature included with 0.6.0 is the new Replay UI. Its functionally similar to the DemoUI, but much, much better. It includes a scrubbable time bar, timescaled playback, frame-by-frame analysis, and more!</p><figure data-orig-width="525" data-orig-height="413" class="tmblr-full"><img src="https://66.media.tumblr.com/32d94d65053baf0863626f3108f56063/d1a6e1029383cd11-b1/s540x810/6b1e4e45d7373f520e064647da3aca46e3b7f84c.png" alt="image" data-orig-width="525" data-orig-height="413"></figure><p>Replays also feature smoother crouching and fixed collision, mimicking player movement with 100% accuracy.<br></p><hr><p><b></b></p><p>So far, the Momentum Shotgun and the Momentum Pistol have custom models. The other weapons (SMG, LMG, Rifle, Sniper, Knife, and Grenade) have Half-Life 2 models as placeholders. We&rsquo;re also still working on sounds, particles, and the arm models, and if you&rsquo;d like to help out in this regard, please feel free to contact us!</p><p>0.6.0 also features the beginning of the removal of CS:S weapons. These are replaced by Momentum weapon overrides, and all CS:S maps with weapon spawns in them will now point to these overrides instead of the CS:S weapons. </p><figure data-orig-width="871" data-orig-height="584" class="tmblr-full"><img src="https://66.media.tumblr.com/a769e36d3eb83924d3bd658a4083e4e6/d1a6e1029383cd11-ec/s540x810/2c30d6a1bde79bc0dbc35a156fa94418781c1d43.png" alt="image" data-orig-width="871" data-orig-height="584"></figure><figure data-orig-width="746" data-orig-height="482" class="tmblr-full"><img src="https://66.media.tumblr.com/6ac325cd78e7de745c73207f2ba71d35/d1a6e1029383cd11-17/s540x810/ce54e8ce277760db5769c2d98641993e79aba09c.png" alt="image" data-orig-width="746" data-orig-height="482"></figure><hr><p>
+
+The checkpoint system was overhauled massively for 0.6.0. While most of this work will not be seen by the player, some improvements were made. Checkpoint-related commands can be bound to keys now, through "mom_checkpoint_*" commands. Checkpoints can now be saved to file (toggleable from settings), and also save whether you were crouching or standing.
+
+</p><p>
+
+We&rsquo;ve added a command "mom_mark_start" which saves a temporary checkpoint in the start trigger, for use by &ldquo;mom_restart&rdquo;. Whenever you mom_restart, you&rsquo;ll be teleported to this spot, rather than the center of the start zone. Similarly, the "mom_mark_start_clear" command clears the aforementioned checkpoint.
+
+</p><hr><p>Much of the work on this update is behind the scenes and still not fully functional, such as the new leaderboards API. We&rsquo;ve added a new UI to go along with the new backend, and while the new UI is gorgeous, it still requires lots of work to be done on the web backend to be completely functional.</p><figure data-orig-width="1078" data-orig-height="879" class="tmblr-full"><img src="https://66.media.tumblr.com/398696c0d33422ab3d123abcc5c3032b/d1a6e1029383cd11-83/s540x810/dd9baf44050f58d59ef815c7e62ca15bade2f664.jpg" alt="image" data-orig-width="1078" data-orig-height="879"></figure><hr><p>0.6.0 contains an enormous amount of small fixes and improvements. We&rsquo;ll go over some of the more interesting or important fixes here:<br></p><ul><li>CS:S properly mounts regardless of which drive it's on</li><li>sv_tickrate, sv_maxvelocity, and sv_airaccelerate are unlocked (temporarily)</li><li>Fixed output timings for entities (boosters) to use tick-based time (Thanks Asunaya!)</li><li>Fixed crashes when playing the game offline<br></li><li>Fixed some memory leaks found throughout Valve's code<br></li><li>Fixed bug with player and replay camera popping out of bounds when too close to ceiling<br></li><li>Fixed particles to properly mount<br></li><li>Fixed replays showing 0 velocity if they had over maxvelocity<br></li><li>Fixed the mapfinished panel to not prematurely close if player goes out of end trigger</li></ul><hr><p>Finally, 0.6.0 sees a functioning Linux build! Here&rsquo;s a screenshot of Momentum running on Debian with a KDE desktop environment:</p><figure data-orig-width="1920" data-orig-height="1080" class="tmblr-full"><img src="https://66.media.tumblr.com/289498850038e84ebccca4ce0e354222/d1a6e1029383cd11-15/s540x810/82dbe880a39371bc4752976a627780d1ad8a3b7c.png" alt="image" data-orig-width="1920" data-orig-height="1080"></figure><p>
+
+The Momentum team is planning to include a complete Linux (and perhaps OSX) build of the game by the time public Alpha comes around.
+
+</p><hr><p>
+
+Whew, that was a lot! There&rsquo;s even more in store for 0.6.0, and you can read the whole changelog on our <a href="https://github.com/momentum-mod/game/releases">GitHub releases page.</a> As always, the releases page is where you can download the latest public build, and do remember that there is a feedback button that you can use to give feedback for the mod! Please use it for giving feedback, instead of the Contact page on the site so we can filter feedback from other general questions about the mod.
+
+</p><p>Happy surfing/hopping!</p><p>Team Momentum</p>
