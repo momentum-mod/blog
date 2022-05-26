@@ -1,0 +1,4 @@
+<details>
+  <summary>{{ if .Get 0 }} {{ (.Get 0) | markdownify }} {{else}} {{"*Click to Toggle Visibility*" | markdownify}} {{end}}</summary>
+  {{ .Inner | markdownify }}
+</details>
