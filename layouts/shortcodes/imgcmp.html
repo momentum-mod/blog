@@ -1,0 +1,93 @@
+<!-- Absolute shoutout to Mads Stoumann @ https://www.codehim.com/html5-css3/html-css-image-comparison-slider/ for this!-->
+<style>
+  .c-compare {
+    --h: 9;
+    --m: 1rem 0;
+    --w: 16;
+    --thumb-bgc: #2196F3;
+    --thumb-bgc-focus: hsla(202, 90%, 73%, 0.7);
+    --thumb-w: 10px;
+
+    margin: var(--m);
+    position: relative;
+  }
+  .c-compare::after {
+    content: "";
+    display: block;
+    padding-bottom: calc((var(--h) / var(--w)) * 100%);
+  }
+  .c-compare__left,
+  .c-compare__right {
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+  }
+  .c-compare__left {
+    clip-path: polygon(0% 0%, var(--value) 0%, var(--value) 100%, 0% 100%);
+  }
+  .c-compare__right {
+    clip-path: polygon(100% 0%, var(--value) 0%, var(--value) 100%, 100% 100%);
+  }
+  .c-compare__range {
+    background-color: transparent;
+    box-sizing: border-box;
+    font-family: inherit;
+    height: 100%;
+    margin: var(--m);
+    outline: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .c-compare__range::-moz-range-thumb {
+    background-color: var(--thumb-bgc);
+    cursor: ew-resize;
+    height: 100%;
+    width: var(--thumb-w);
+  }
+  .c-compare__range::-webkit-slider-thumb {
+    background-color: var(--thumb-bgc);
+    cursor: ew-resize;
+    height: 100%;
+    width: var(--thumb-w);
+  }
+  .c-compare__range:focus::-webkit-slider-thumb {
+    background-color: var(--thumb-bgc-focus);
+    box-shadow: 0 0 0 3px var(--thumb-bgc);
+  }
+  .c-compare__range:focus::-moz-range-thumb {
+    background-color: var(--thumb-bgc-focus);
+    box-shadow: 0 0 0 3px var(--thumb-bgc);
+  }
+  .c-compare__range::-moz-range-track {
+    background: transparent;
+    background-size: 100%;
+    box-sizing: border-box;
+  }
+  .c-compare__range::-webkit-slider-runnable-track {
+    background: transparent;
+    background-size: 100%;
+    box-sizing: border-box;
+    height: 100%;
+  }
+  .c-compare__range,
+  .c-compare__range::-webkit-slider-runnable-track,
+  .c-compare__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+</style>
+
+<div class="c-compare" style="--value: 50%">
+  <img class="c-compare__left" src="{{.Get "baseImage"}}" alt="Base Image" />
+  <img class="c-compare__right" src="{{.Get "overlayImage"}}" alt="Compare Image" />
+  <input
+    type="range"
+    class="c-rng c-compare__range"
+    min="0"
+    max="100"
+    value="50"
+    oninput="this.parentNode.style.setProperty('--value', `${this.value}%`)"
+  />
+</div>
