@@ -7,7 +7,7 @@ draft: false
 
 ## Take Me Higher
 
-After some feedback from [the prior release](../0.9.2), we've raised the `models` and `brushes` limits even further! They were not scaled appropriately in proportion to the other limits that were raised. I've also added the `displacements` limit, forgot that in the previous table, sorry about that!
+After some feedback from [the prior release](../0.9.2/), we've raised the `models` and `brushes` limits even further! They were not scaled appropriately in proportion to the other limits that were raised. I've also added the `displacements` limit, forgot that in the previous table, sorry about that!
 
 | **Lump/Data Limit** | **Old (BSP v21)** | **New (BSP v25)** | **Magnitude Increment** |
 | ------------------- | ----------------- | ----------------- | :-----: |
