@@ -36,6 +36,9 @@ params:
   showtoc: true
   tocopen: false
 
+  # Includes HTML strings in RSS feed with formatting
+  ShowFullTextinRSS: true
+
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
