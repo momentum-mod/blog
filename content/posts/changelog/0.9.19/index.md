@@ -1,7 +1,7 @@
 ---
 draft: false
 showDate: true
-date: 2023-08-15T09:35:19+00:00
+date: 2023-08-15T09:56:30+00:00
 title: 0.9.19 Changelog
 ---
 
@@ -17,12 +17,12 @@ title: 0.9.19 Changelog
 - Closing the console no longer clears the input box automatically
 ### Added (1)
 
-- Exposed your mom lol
+- Exposed `SetSelected(bool)` on `RadioButton` in Panorama JavaScript API
 ### Fixed (2)
 
 - Fixed Panorama UI controller movement always moving right no matter the input direction
 - Fixed shaded textured view not working
-### Improved (7)
+### Improved (10)
 
 - Hammer fix map dialog now will try to warn about unused keyvalue typos of existing keyvalues are not set, instead of suggesting to remove them
 - Hammer options dialog now only saves settings when pressing OK button
@@ -30,4 +30,7 @@ title: 0.9.19 Changelog
 - Opening Console Opens Main Menu ([game/issues/1966](https://github.com/momentum-mod/game/issues/1966))
 - Panorama xml parsing errors should now give more context to the error
 - Remove blank lines from console history ([game/issues/1972](https://github.com/momentum-mod/game/issues/1972))
+- Updated Conc models and textures ([game/issues/2090](https://github.com/momentum-mod/game/issues/2090))
+- Updated Railgun sound ([game/issues/2089](https://github.com/momentum-mod/game/issues/2089))
+- Updated explosion decals ([game/issues/2091](https://github.com/momentum-mod/game/issues/2091))
 - [Console] Investigate improving tab autocomplete behavior ([game/issues/1776](https://github.com/momentum-mod/game/issues/1776))
