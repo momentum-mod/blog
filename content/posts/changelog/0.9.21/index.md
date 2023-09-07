@@ -1,7 +1,7 @@
 ---
 draft: false
 showDate: true
-date: 2023-09-07T07:57:13+00:00
+date: 2023-09-07T08:12:29+00:00
 title: 0.9.21 Changelog
 ---
 
@@ -28,5 +28,3 @@ title: 0.9.21 Changelog
 - Removed SFUI prefixes from all localization files
 - Unamed instances can now use `func_instance_io_proxy`
 - Update Audio Settings to use new MixGroups ([game/issues/2097](https://github.com/momentum-mod/game/issues/2097))
-### Other (0)
-
