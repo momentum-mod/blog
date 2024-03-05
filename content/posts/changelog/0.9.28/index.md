@@ -1,11 +1,11 @@
 ---
 draft: false
 showDate: true
-date: 2024-03-05T09:25:21+00:00
+date: 2024-03-05T09:30:28+00:00
 title: 0.9.28 Changelog
 ---
 
-Hi! As usual, most work is being on our internal 0.10 branch.
+Hi! As usual, most work is being done on our internal 0.10 branch.
 
 This update fixes certain cvars being locked being sv_cheats 1 since removing -mapping mode, and a crash on close that we introduced last update.
 
