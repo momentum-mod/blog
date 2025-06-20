@@ -171,8 +171,6 @@ BSP Convert is an open source command line interface tool for converting maps fr
 - `sv_noclipspeed_duck_multiplier` and `sv_noclipspeed_sprint_multiplier` can now be used to increase noclip speed above the unmodified speed.
 - Air friction applied while noclipping is now controlled by the new ConVar `sv_noclipfriction`, which can be freely customized.
 - You can now exceed `sv_maxvelocity` while noclipping.
-- Added in-game tools for exploring and modifying entities which commonly need adjustments before the map can be made official. For example, the tools make it easy to assign the "keep negative Z velocity only" mode to the correct teleports on a surf map, or to quickly substitute `trigger_push` start boosts with the more robust `trigger_setspeed`.
-	> These tools can be accessed with `devui_show entitytools`.
 
 - The map selector is now always browsed in a single game mode at a time.
 
