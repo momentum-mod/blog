@@ -160,7 +160,7 @@ Entity Tools can be enabled using the `devui_show entitytools` console command. 
 BSP Convert is an open source command line interface tool for converting maps from Quake 3 into Strata engine. The main advantage of this tool is that it preserves lightmap data across engines, which is normally lost during decompilation. It also automates the vast majority of the porting process, reducing the time it takes to port maps from hours of manual effort to seconds with one command. For more information on the project, check [BSP Convert's GitHub page](https://github.com/momentum-mod/bspconvert).
 
 ## Miscellaneous
-- Added clustered rendering, a new rendering system allows for real-time dynamic lighting. For more information, see https://portal2communityedition.com/clustered
+- Added clustered rendering, a new rendering system that allows for real-time dynamic lighting. For more information, see https://portal2communityedition.com/clustered
 - The entire official map list is now cached locally, enabling the map selector to update instantly as you type or change filters.
 - Added roaming lobbies, which automatically connect you to players playing the same map as you (toggle with the `mom_lobby_roaming` ConVar).
 - Added a "freecam" system to look around the map independently of the player's position. Exiting freecam resumes your control and view of the player. Freecam can be toggled with `mom_freecam`. When your timer is running, the `noclip` command acts like `mom_freecam` instead.
