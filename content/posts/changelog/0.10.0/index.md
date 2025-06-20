@@ -126,6 +126,31 @@ We have an all-new system for adding maps in a structured and streamlined way. A
 - The website dashboard has been upgraded with a new look and no longer requires logging in to view leaderboards.
 - Improved the backend's ability to handle traffic.
 
+## Gamemodes
+- Added the following new gamemodes:
+	- Half-Life Bhop
+ 	- Counter-Strike 1.6 Climb
+  	- Defrag VQ3: Default movement settings from Quake 3 Arena
+  	- Vintage: Reminiscent of Quake 1 movement, with some adjustments for faster paced gameplay
+- Defrag changes:
+ 	- Added overbounce zones. These zones allow the player to overbounce while inside of their volume.
+
+## Porting Tools
+### Lumper
+Lumper is an open source program used for modifying various lumps in Source engine's BSP files. It can be used to make changes to entities, replace texture assets, apply Stripper configs, and review maps. For more information, check [Lumper's GitHub page](https://github.com/momentum-mod/lumper).
+
+### Entity Tools
+Entity Tools can be enabled using the `devui_show entitytools` console command. These are in-game tools used to make adjustments to entities to improve gameplay and promote competitive integrity according to Momentum Mod’s standards. The following tools are currently available for modifying in-game entities:
+- Teleport Velocity Mode: Change the velocity mode applied to players arriving at a teleport destination. This is mainly used for adding drop teleports to staged surf maps.
+- Landmark Teleports: Fixes issues with incorrect landmark destination angles.
+- Boost Triggers: Convert boost triggers to more consistent and less exploitable versions.
+- Gravity Triggers: Add persistent gravity to trigger_gravity entities used on pre-CS:GO maps.
+- Model Scale Fix: Fix the scale of props that use the `modelscale` KV on pre-CS:GO maps.
+- Bhop Block Fix: Converts legacy func_door and func_button bhop platforms to func_bhop.
+
+### BSP Convert
+BSP Convert is an open source command line interface tool for converting maps from Quake 3 into Strata engine. The main advantage of this tool is that it preserves lightmap data across engines, which is normally lost during decompilation. It also automates the vast majority of the porting process, reducing the time it takes to port maps from hours of manual effort to seconds with one command. For more information on the project, check [BSP Convert's GitHub page](https://github.com/momentum-mod/bspconvert).
+
 ## Miscellaneous
 - The entire official map list is now cached locally, enabling the map selector to update instantly as you type or change filters.
 - Added roaming lobbies, which automatically connect you to players playing the same map as you (toggle with the `mom_lobby_roaming` ConVar).
@@ -134,7 +159,6 @@ We have an all-new system for adding maps in a structured and streamlined way. A
 - Implemented a custom Momentum Mod player model in place of the placeholder shapes.
 - Added the `mom_respawn` command, which teleports the player to the map spawn location.
 - Defrag's CPM, VQ3, and Vintage movement configurations are now their own game modes.
-- Added game modes: Half-Life 1 Bhop and CS 1.6 Climb
 - The still-unimplemented Tricksurf and Parkour game modes are no longer listed in-game and will be revisited later.
 - `sv_noclipspeed_duck_multiplier` and `sv_noclipspeed_sprint_multiplier` can now be used to increase noclip speed above the unmodified speed.
 - Air friction applied while noclipping is now controlled by the new ConVar `sv_noclipfriction`, which can be freely customized.
@@ -148,5 +172,9 @@ We have an all-new system for adding maps in a structured and streamlined way. A
 - Fixed being able to move while inside areas that should be solid, including outside of the world.
 - Added `mom_mv_check_ground_quadrants` movement ConVar.
 - Added `mom_mv_use_goldsrc_conc_movement` ConVar.
-- Added experimental `mom_mv_bhop_friction` ConVar. This forces the player to be affected by some minimum number of ticks worth of ground friction when bhopping, similar to what happens with an imperfect non-autohop jump.
+- Added `mom_tv_replay_save_mode` ConVar. This controls which replays are kept permanently when saving. Setting this to 0 will keep all replays, and 1 will keep all personal best replays.
+- Added `mom_tv_replay_expiration` ConVar. This controls how long temporary replays are kept (in days).
+- Added mounted asset priority detection. Maps that use more assets from one game will prioritize loading assets from that game. This means maps like rj_quba will no longer use HL2 textures for the glass walls.
+- Added a map selector gallery component for viewing official map screenshots.
+- Added command safeguards. Commands that reset your timer now need to be held for a brief duration before they execute. Use `mom_safeguard_minruntime` to specify how long the timer must be running before the safeguards activate.
 - Additional UI and infrastructure improvements and small bug fixes!
