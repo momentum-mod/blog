@@ -167,7 +167,6 @@ BSP Convert is an open source command line interface tool for converting maps fr
 - Added support for automatically starting a third-person replay of your chosen comparison run when your timer starts so you can race it (toggle with the `mom_tv_replay_comparison_show` ConVar).
 - Implemented a custom Momentum Mod player model in place of the placeholder shapes.
 - Added the `mom_respawn` command, which teleports the player to the map spawn location.
-- Defrag's CPM, VQ3, and Vintage movement configurations are now their own game modes.
 - The still-unimplemented Tricksurf and Parkour game modes are no longer listed in-game and will be revisited later.
 - `sv_noclipspeed_duck_multiplier` and `sv_noclipspeed_sprint_multiplier` can now be used to increase noclip speed above the unmodified speed.
 - Air friction applied while noclipping is now controlled by the new ConVar `sv_noclipfriction`, which can be freely customized.
