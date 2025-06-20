@@ -2,7 +2,6 @@
 - everyone should look over this and make sure nothing is missing. this probably shouldnt include absolutely everything we changed that's user-facing, but dont want to forget key things
 - update convar/command names after any final changes
 - map submission and website sections can maybe be elaborated a bit
-- BSPConvert and Lumper - do these make sense in the 0.10 changelog (since they are not new "features" being turned on) or are they better included as part of some porting/submission/tooling blog?
 
 # Momentum 0.10.0 Changelog
 
@@ -39,6 +38,9 @@ Here are the highlights:
 	> The tools can be accessed by turning on `sv_cheats 1` and using the button that appears in the bottom left corner of the tab menu.
 
 - For those that prefer to use Hammer, zones can still be set up in Hammer and exported as part of the compile chain or as an independent action, using zonemaker.exe (formerly zonmaker.exe).
+
+- Added command safeguards. Commands that reset your timer now need to be held for a brief duration before they execute. Use `mom_safeguard_minruntime` to specify how long the timer must be running before the safeguards activate.
+- Timer restart commands will now teleport to spawn when there are no zones.
 	
 ## Replays and Multiplayer Networking (MomentumTV)
 We have also completely rewritten and revamped our replay and multiplayer networking systems. These now function like fast and lightweight Source Engine demos, which makes them extremely capable and accurate to real gameplay.
@@ -130,10 +132,16 @@ We have an all-new system for adding maps in a structured and streamlined way. A
 - Added the following new gamemodes:
 	- Half-Life Bhop
  	- Counter-Strike 1.6 Climb
-  	- Defrag VQ3: Default movement settings from Quake 3 Arena
-  	- Vintage: Reminiscent of Quake 1 movement, with some adjustments for faster paced gameplay
+  	- VQ3 Defrag: Default movement settings from Quake 3 Arena
+  	- Vintage Defrag: Reminiscent of Quake 1 movement, with some adjustments for faster paced gameplay
 - Defrag changes:
+	- Added Defrag modifier bonuses. These bonuses can add any combination of the following modifiers to a map: haste, slick, damage boost, rockets, plasma gun, and BFG.
  	- Added overbounce zones. These zones allow the player to overbounce while inside of their volume.
+- Sticky Jump changes:
+	- New knockback mode for stickybombs, which cancels all knockback taken during the tick if stickybomb damage would exceed 175. Off by default, controlled by the `mom_sj_cancel_lethal_knockback` ConVar.
+ 	- `mom_sj_buffer_window` ConVar to control the stickybomb launcher attack buffer.
+  	- `mom_sj_set_sticky_limit` command to set the current stickybomb limit.
+  	- `mom_sj_no_damage_window` ConVar to provide a short buffer after arming where the stickybomb won't contribute to damage taken for the purpose of knockback canceling.
 
 ## Porting Tools
 ### Lumper
@@ -152,6 +160,7 @@ Entity Tools can be enabled using the `devui_show entitytools` console command. 
 BSP Convert is an open source command line interface tool for converting maps from Quake 3 into Strata engine. The main advantage of this tool is that it preserves lightmap data across engines, which is normally lost during decompilation. It also automates the vast majority of the porting process, reducing the time it takes to port maps from hours of manual effort to seconds with one command. For more information on the project, check [BSP Convert's GitHub page](https://github.com/momentum-mod/bspconvert).
 
 ## Miscellaneous
+- Added clustered rendering, a new rendering system allows for real-time dynamic lighting. For more information, see https://portal2communityedition.com/clustered
 - The entire official map list is now cached locally, enabling the map selector to update instantly as you type or change filters.
 - Added roaming lobbies, which automatically connect you to players playing the same map as you (toggle with the `mom_lobby_roaming` ConVar).
 - Added a "freecam" system to look around the map independently of the player's position. Exiting freecam resumes your control and view of the player. Freecam can be toggled with `mom_freecam`. When your timer is running, the `noclip` command acts like `mom_freecam` instead.
@@ -174,7 +183,8 @@ BSP Convert is an open source command line interface tool for converting maps fr
 - Added `mom_mv_use_goldsrc_conc_movement` ConVar.
 - Added `mom_tv_replay_save_mode` ConVar. This controls which replays are kept permanently when saving. Setting this to 0 will keep all replays, and 1 will keep all personal best replays.
 - Added `mom_tv_replay_expiration` ConVar. This controls how long temporary replays are kept (in days).
+- Added `mom_hud_endofrun_autoshow` ConVar. This can be used to toggle the end of run menu automatically displaying when completing a run.
+- Added `mom_play_jump_sound` ConVar. Enabling this will make a sound play when you jump.
 - Added mounted asset priority detection. Maps that use more assets from one game will prioritize loading assets from that game. This means maps like rj_quba will no longer use HL2 textures for the glass walls.
 - Added a map selector gallery component for viewing official map screenshots.
-- Added command safeguards. Commands that reset your timer now need to be held for a brief duration before they execute. Use `mom_safeguard_minruntime` to specify how long the timer must be running before the safeguards activate.
 - Additional UI and infrastructure improvements and small bug fixes!
