@@ -1,7 +1,15 @@
 # TO-DO!!!
 - everyone should look over this and make sure nothing is missing. this probably shouldnt include absolutely everything we changed that's user-facing, but dont want to forget key things
-- update convar/command names after any final changes
 - map submission and website sections can maybe be elaborated a bit
+
+## Intro
+
+After years of passionate development and countless hours of dedication from our volunteer team, we're thrilled to announce that Momentum Mod is finally ready for its public release.
+**TODO**
+
+## What took us so long?
+
+Development timeslines rarely go according to plan, especially when our team is made up entirely of volunteers. This ended up being our biggest update by far and required us to rework most of the major systems in the game. It took us about 6 months of planning to design a new zoning and timer system that handled all of the unique needs of different gamemodes. About half of the game was rewritten (40,000+ lines of C++ engine code) and most of our website and backend has completely changed. We also had to deal with many unplanned changes such as rio's replay refactor, in-game entity tools, and a full configuration reset. Map porting has also revealed countless small differences and incompatibilities between old versions of Source and our CS:GO branch of Source (Strata) that we had to account for in our in-game zoning tools and Lumper. Despite the seemingly endless series of refactors and bug fixes, our team pressed on and have finally gotten the game to a place where we feel confident about releasing it to the broader public.
 
 # Momentum 0.10.0 Changelog
 
