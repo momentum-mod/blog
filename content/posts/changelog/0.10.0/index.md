@@ -143,6 +143,7 @@ We have an all-new system for adding maps in a structured and streamlined way. A
 - Defrag changes:
 	- Added Defrag modifier bonuses. These bonuses can add any combination of the following modifiers to a map: haste, slick, damage boost, rockets, plasma gun, and BFG.
  	- Added overbounce zones. These zones allow the player to overbounce while inside of their volume.
+  	- Updated start zones to allow the player to pre-run inside of their volumes. This means the player can bhop or use rockets to gain speed inside of the zone, but their timer doesn't start until they leave the zone.
 - Sticky Jump changes:
 	- New knockback mode for stickybombs, which cancels all knockback taken during the tick if stickybomb damage would exceed 175. Off by default, controlled by the `mom_sj_cancel_lethal_knockback` ConVar.
  	- `mom_sj_buffer_window` ConVar to control the stickybomb launcher attack buffer.
