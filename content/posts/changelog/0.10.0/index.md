@@ -48,6 +48,9 @@ Here are the highlights:
 - Track and stage restart commands can now conveniently be used for more things: they will now automatically close windows, and if you are spectating, they will respawn you. The commands can also be used to teleport to the map spawn point (like `mom_teleport_to_spawn`) if you are playing an unofficial map with no timer zones set up.
 	
 ## Replays and Multiplayer Networking (MomentumTV)
+
+![Replay Timeline](images/replay_timeline.png)
+
 Our replay and multiplayer networking systems have also been massively upgraded with a new engine-level system called **MomentumTV**.
 
 If you have heard of "SourceTV" or "GOTV" from other Source Engine games, MomentumTV is similar: it records data networked from the server to the client (which both exist on your own computer when you play Momentum Mod) and can play this data back later. This is essentially how Source Engine demo files work, though while demos require exiting a map, waiting to load into the demo, and watching it like a movie in a video player, **MomentumTV Replays** can be seamlessly loaded and played back **without exiting the map**. 
@@ -55,8 +58,6 @@ If you have heard of "SourceTV" or "GOTV" from other Source Engine games, Moment
 Replay files can be played back alongside you to give you a "ghost" to race against, or, like a demo, can be spectated directly to see a truly one-to-one recreation of the original recorded gameplay, including projectiles, weapon animations, sounds, the HUD, and **even the activity of map entities like doors and buttons.**
 
 But unlike demos, you can *instantly* jump to any part of a MomentumTV replay, or even drag the play head with your mouse to find the exact gameplay tick you are looking for, in real time.
-
-![Replay Timeline](images/replay_timeline.png)
 
 ### Peer-to-Peer Multiplayer — in the Source Engine?
 
@@ -159,17 +160,26 @@ If you're interested, check out the guides on our website:
 ### Porting Tools
 
 #### Lumper
+
+![Lumper](images/lumper.png)
+
 Lumper is an open-source program used to inspect and modify Source Engine BSP files. It can add or remove entities, adjust entity properties, replace texture assets, apply Stripper directives, and is overall a powerful tool for reviewing and fine-tuning maps without recompilation. For more information, check out our [map porting guide](https://docs.momentum-mod.org/guide/map_submission/map_porting/), or visit [Lumper's GitHub page](https://github.com/momentum-mod/lumper).
 
 #### BSP Convert
 BSP Convert is an open-source command-line interface tool for converting maps from Quake 3 into the Strata engine (the extension of the Source Engine which Momentum Mod runs on). The main advantage of this tool is that it preserves lightmap data which is normally lost during decompilation. It also automates the vast majority of the porting process, reducing the time it takes to port maps from hours of manual effort to seconds with one command. For more information on the project, visit [BSP Convert's GitHub page](https://github.com/momentum-mod/bspconvert).
 
 #### In-Game Entity Tools
+
+![Entity Tools](images/entity_tools.png)
+
 The in-game "Entity Tools" help a map porter explore and modify entities which commonly need adjustments before the map can be made official. For example, the tools make it easy to set the "keep negative Z velocity only" mode to the right teleports on a surf map, or to quickly substitute `trigger_push` start boosts with the more robust `trigger_setspeed` and immediately test the updated trigger for correctness.
 
 These tools produce a set of Stripper directives that can be applied to the BSP using Lumper, without recompiling the map. For more information, check out our [map porting guide](https://docs.momentum-mod.org/guide/map_submission/map_porting/).
 
 #### Zoning Tools
+
+![Create Zone](images/create_zone.gif)
+
 Our in-game zoning tools have been remade to support the new zone system and were upgraded with a massively improved user experience. The tools can be accessed by turning on `sv_cheats 1` and using the button that appears in the bottom left corner of the tab menu.
 
 For those that prefer to use Hammer, zones can still be set up there and exported as part of the compile chain or as an independent action, using zonemaker.exe (formerly zonmaker.exe). However, note that zoning in Hammer is somewhat limited compared to using the in-game tools (definitely give the in-game tools a try!)
@@ -178,6 +188,8 @@ Check out our [zoning guide](https://docs.momentum-mod.org/guide/map_submission/
 
 ### Map Submission and Review System
 
+![Map Submission](images/map_submission.png)
+
 Once a map has been carefully fixed up, zoned, and tested according to our guidelines, it can be submitted for approval as an official Momentum Mod map using our new map submission and review system.
 
 Using a streamlined form on our website, upload the BSP and zone files along with screenshots and other necessary information like author names and track difficulty tiers, then wait for the map to be reviewed. Reviewers from the community can test your submission and respond with feedback to help you get the map to where it needs to be.
@@ -185,6 +197,9 @@ Using a streamlined form on our website, upload the BSP and zone files along wit
 When the map passes the review process, it is added to the game for everyone to download and play!
 
 ## Website and Backend Systems
+
+![Map List](images/map_list.png)
+
 - The website front page has been redesigned and updated.
 - The website dashboard has been upgraded with a new look and no longer requires logging in to view leaderboards.
 - Improved the backend's ability to handle traffic.
