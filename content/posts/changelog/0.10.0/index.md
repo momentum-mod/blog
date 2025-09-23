@@ -56,7 +56,7 @@ Replay files can be played back alongside you to give you a "ghost" to race agai
 
 But unlike demos, you can *instantly* jump to any part of a MomentumTV replay, or even drag the play head with your mouse to find the exact gameplay tick you are looking for, in real time.
 
-<< insert picture/gif of replay controls >>
+![Replay Timeline](images/replay_timeline.png)
 
 ### Peer-to-Peer Multiplayer — in the Source Engine?
 
