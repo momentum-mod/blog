@@ -2,12 +2,14 @@ baseURL: "https://blog.momentum-mod.org/"
 languageCode: 'en-us'
 title: 'Momentum Mod Dev Blog'
 theme: PaperMod
-paginate: 5
 
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+
+pagination:
+  pagerSize: 8
 
 minify:
   disableXML: true
