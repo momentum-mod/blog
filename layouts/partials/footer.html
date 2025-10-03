@@ -3,7 +3,7 @@
     {{ if and (.Site.Params.SocialIconsFooter) (not .Params.HideSocialIconsFooter) }}
         {{ if or (.Site.Params.SocialIconsFooterHome) (not .IsHome) }}
             {{ if not (in .Site.Params.HideSocialIconsFooterSections .Section) }}
-                {{ partial "social_icons.html" $.Site.Params.socialIcons }}
+                {{ partial "social_icons.html" }}
             {{ end }}
         {{ end }}
     {{ end }}
