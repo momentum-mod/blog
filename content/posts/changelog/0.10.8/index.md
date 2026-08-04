@@ -1,15 +1,19 @@
 ---
 draft: false
 showDate: true
-date: 2026-08-04T05:49:16+00:00
+date: 2026-08-04T10:39:01+00:00
 title: 0.10.8 Changelog
 ---
 
 Hey there, we've got some fun things for you all to try!
 
-The first is the long-awaited HUD Customizer worked on by Natan and Tom. You can activate the customizer by clicking the in-game TAB menu icon, or via the game settings while in a map, allowing you to completely change the locations, fonts, colors and more of the HUD! The lovely Pace has made a wonderful video on how it works here: https://www.youtube.com/watch?v=WI9mNxF1_zQ
+The first is the long-awaited HUD Customizer worked on by Natan and Tom. You can activate the customizer by clicking the in-game TAB menu icon allowing you to completely change the locations, fonts, colors and more of the HUD! The lovely Pace has made a wonderful video on how it works here: https://www.youtube.com/watch?v=WI9mNxF1_zQ
+
+Speaking of HUD components, the commonly-requested Energy Speedometer has been added back into Momentum! This displays your total mechanical energy (kinetic + potential) as the height you could reach above your last jump, and has found a foothold in the Surf community in the past couple years. We're excited to have it back for those who use it!
 
 Panzer, with some help from Mac, has been getting BSPConvert cleaned up for its 1.0.0 release! 0.10.8 brings a ton of compatibility and general fixes to defrag maps, including support for Q3's volumetric fog and spheremap reflections. This work helps unblock a lot of defrag maps from being ported, so keep an eye out for more Q3 maps coming soon!
+
+Speaking of maps, another common problem we've seen is players having a bad time on maps they don't quite have the assets for. One of the solutions we have added recently is the 'placeholders' system. We've converted every model with collision into a simplified representation of pure collision, combined with a static, ambient-lit texture that can make maps more bearable for those who don't have CS:S or Portal 2. Still, players should be installing the games that maps require so that they experience the maps the way the mappers intended, but this solution allows the maps to be more enjoyable (and even somewhat playable) for those who don't.
 
 This update also features another couple levers to pull for attempting to fix the dreaded Lobby Join Lag issue we've seen players deal with for a while now. By default, we're disabling the ability for players to make direct connections to one another, instead relying on connecting to the Steam relay servers only. This may introduce some latency with sending packets to some players, but since Momentum doesn't rely on synchronized game state, this is a trade worth making to see if it finally fixes this once and for all! Please let us know if the join lag still happens for you, or if the game still crashes upon quitting shortly after leaving a lobby with others in it.
 
@@ -17,7 +21,7 @@ This update also features another couple levers to pull for attempting to fix th
 
 ### HUD Customizer (1)
 
-- The in-game HUD is now fully customizable! Players can enable HUD editing via the in-game TAB menu, or via the settings while in a map! You can get an overview on how to use it via Pace's wonderful video found here: https://www.youtube.com/watch?v=WI9mNxF1_zQ
+- The in-game HUD is now fully customizable! Players can enable HUD editing via the icon in the in-game TAB menu! You can get an overview on how to use it via Pace's wonderful video found here: https://www.youtube.com/watch?v=WI9mNxF1_zQ
 ### Lobby Lag Fixes (3)
 
 - - `mom_lobby_ice_disable` - Sets the global `P2P_Transport_ICE_Enable` config to 0, routing lobby/TV connections over the Steam relay instead of direct P2P. Potentially eliminates an expensive network-adapter enumeration that only happens on Windows. This is defaulted to ON.
