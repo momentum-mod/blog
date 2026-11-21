@@ -9,6 +9,110 @@ Hey all, we’ve got an exciting update for you today! Groups, voice chat, a bra
 
 NOTE: Rank points are NOT in this update, but will be coming VERY soon after. We have some tweaks to make from excellent community feedback, and will deploy it to our site first to see how things are looking. Once we’re comfortable, we’ll show rank points and rankings in the game directly!
 
+## Voice Chat and Bans
+
+No Source based movement game is complete without a way to scream at other players getting a better time than you. This update brings the heavily-requested Voice Chat feature, and a subsequent communication bans system.
+
+
+* Added voice chat system. Use +voicerecord to communicate with your microphone based on your OS settings.
+* Added an option to report players by right clicking them in the lobby player list.
+* Replaced HTTP-based run session tracking with WebSockets. This should allow for more reliable run session tracking and live communication ban updates.
+
+We’re also moving over to using WebSockets for our run sessions, but this also allows us to send data from the backend to the game, allowing for things like WR notifications, or updating your local ban list. Stay tuned for more use of this in the future!
+
+
+## Map Selector and Leaderboards Rework
+
+This update features the overhauled Leaderboards panel, which now includes groups and pages! You can scroll the leaderboards, see group boundaries, and get more info at a glance. Both the map selector and in-game leaderboards use this new design, so make sure to give us feedback on how it feels!
+
+![New Map Selector Leaderboards](images/lbs.png)
+
+* Reworked the map selector and tab menu
+    * Leaderboards, Track Selector, Style Selector, and Player List are now separate components
+* Reworked the gallery
+    * Map description and credits have been moved to the gallery page
+* Added groups to indicate how good a run is compared to the rest of the leaderboard.
+* Added pagination to leaderboards
+* Added a track selector to the main menu and tab menu. Every main, stage and bonus track now shows its tier, your personal best, your rank out of total completions and your rank group for the selected style.
+* End Of Run results are now cached per-track and are accessible via the track selector
+* Automatically download maps when trying to watch a replay.
+* Automatically play maps after they are done downloading.
+* Fixed map selector thumbnails sometimes showing a map from the previously selected gamemode.
+* Fixed personal best times and favorites sometimes disappearing from the map selector.
+* Fixed the map selector background sometimes showing a different map than the selected one after quickly switching between maps.
+* Fixed the map selector showing no maps when you can't authenticate with the server. It now shows the map list from your last session.
+* Pressing &lt;Enter> while typing in the map name filter box now selects the first listed map.
+
+
+## Rendering Fixes
+
+Our jump to the CS:GO-based Strata Source engine means we get a great looking game, at some cost of things looking different. Luckily, with access to the full engine, we can fix these things looking differently, making the game look best in all cases.
+
+* Significantly improved performance on maps converted from Quake 3 (5-6x more FPS on detailed maps like dfwc2021-2).
+* Fixed models in rooms built from props being lit far too dark and with the wrong colors (surf_kraken).
+* Added `r_legacy_model_lighting` to control how map lights light models. -1 = automatic (default), which uses Source-style lighting on maps compiled before Strata's light modes, 0 = Strata, 1 = Source.
+* Fixed models not being lit by the sun on maps without an `env_cascade_light` (surf_innokia).
+* Fixed some static props rendering completely black when their map's baked lighting was made for a different version of the model (surf_pantheon, surf_stonework3).
+* Fixed refract materials such as glass and water appearing invisible or without their tint (surf_sacrifice, surf_pools).
+* Fixed players, weapons and other moving models getting no direct sunlight on maps without CSM.
+* Fixed materials with syntax errors in their VMT failing to load.
+* Fixed translucent effects behind refracting glass, such as glows, disappearing on older maps.
+* `r_unlimitedrefract` now defaults to -1 (automatic).
+
+![surf_innokia improvement](images/innokia.png)
+![dark improvement](images/dark.png)
+![Player Model Improvements](images/guy.png)
+
+## Gameplay Improvements
+
+
+
+* Re-implemented reduced ducktap landing friction in HL1 Bhop (`mom_mv_ducktap_friction_timestep`).
+* Improved accuracy of Defrag projectile knockback. This should help with plasma climbing up higher walls.
+* Fixed view briefly rising from below the player after restoring a saveloc shortly after crouching in Climb 1.6 and HL1 Bhop.
+* Fixed savelocs losing their vertical velocity when loaded while standing on the ground.
+* Fixed `mom_respawn` not resetting weapons and powerups in Defrag gamemodes.
+* Fixed being able to set a checkpoint in Climb modes while standing in a `trigger_momentum_bhop`.
+
+
+## HUD Improvements
+
+
+
+* Improved Defrag HUD rendering. In-world HUD elements (CGAZ, Snap HUD, Prime Sight, etc.) are now updated every frame, so they stay locked to the world at any framerate and react to your keys without delay.
+* Add saveloc support for the energy speedometer.
+* Fixed the energy speedometer incorrectly showing height changes from teleports and portals as gained or lost energy.
+* The energy speedometer now measures height from where you last stood on the ground without bhopping.
+* CGAZ mirror zones now work in every direction and follow the same input rules as Prime Sight (two-key inputs in white, one-key inputs in amber by default), including Single-Key Zones and Input Range in VQ3.
+* Prime Sight in VQ3 now shows the best zone for every input within an adjustable Input Range of your velocity.
+* Prime Sight now works in all directions, not only forward.
+* Prime Sight inactive zones and CGAZ mirror zones can be colored by input: By Key Count, By Key or By Direction, with a color preview in the settings. Works in CPM and VQ3.
+* Turnt Meter, a new Defrag HUD element that replaces the Windicator. It shows whether you are turning at the optimal rate for air control, A/D turns (CPM), VTG air movement, circle jumps and slick.
+* Snap HUD target highlight now works in every direction, matching Prime Sight's target zone.
+* Pitch targets: add as many as you like, each drawn as a line or, with different min and max values, as a zone.
+* The Defrag HUD now hides in free-roam, third-person view and third-person spectating.
+* Fixed splits HUD checkpoint numbering issues when watching replays recorded before the 0.10.6 update.
+* Added perfect bhop percentage stat to jump timing HUD (mom_hud_jump_timing_perfs).
+* Improved HUD Customizer snapping. HUD elements can now be aligned with other elements. 
+* Moved Defrag HUD to the HUD Customizer and removed old Defrag HUD convars.
+* Panorama HUD panels can be forced to update every frame.
+* HUD Customizer layer controls (Bring to Front, Bring Forward, Send Backward, Send to Back) for overlapping elements.
+* Fixed the zoning and HUD customizer menus remaining interactable via the keyboard after being closed.
+* Fixed closing the zoning and HUD customizer menus not closing any open dropdown menus.
+* Close tab menu when opening the HUD customizer.
+
+
+## Zone Editor Improvements
+
+* Zone heights now follow the zone's own faces instead of whatever is behind the zone.
+* Zone point snapping now works on props with a high vertex count.
+* Show zone dimensions next to the crosshair while zoning instead of corner coordinates.
+* Added holding CTRL while zoning to ignore player clips when placing points, so zones can be lined up with the geometry behind them.
+* Fixed zone editor crosshair text (e.g. heights and the "close polygon" hint) not appearing.
+* Fixed the zoning step and shape creation mode labels being positioned incorrectly and mostly hidden behind the zoning menu.
+
+
+## Raw Changelog
 ### Added (21)
 
 - Added "Touching surface property" filter mode to `filter_momentum_surface_collision`. Set `surfaceprop_name` to a surface property (e.g. `metal`) to filter on it. Unlike "Touching material", this also works on displacements
